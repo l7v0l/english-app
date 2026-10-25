@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مفرداتي</title>
+<meta name="description" content="تعلّم الإنجليزي: كلماتك، ١٠٠٠ كلمة، قصص، ومكتبتك الخاصة">
+<meta name="theme-color" content="#f6f7fb">
+<meta name="color-scheme" content="light dark">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg">
+<link rel="apple-touch-icon" href="icon.svg">
+<script>
+  // apply saved theme before paint (no flash)
+  (function () {
+    try {
+      var t = localStorage.getItem("mufradati-theme") || "auto";
+      var d = t === "dark" || (t === "auto" && matchMedia("(prefers-color-scheme: dark)").matches);
+      document.documentElement.dataset.theme = d ? "dark" : "light";
+    } catch (e) {}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="logo en">Aa</span><b>مفرداتي</b></div>
+  <div class="end">
+    <div class="streak" id="streakPill" title="أيام متتالية"></div>
+    <button class="icon-btn" id="themeBtn" aria-label="تغيير المظهر"></button>
+  </div>
+</header>
+
+<main id="app"></main>
+<nav id="nav" aria-label="التنقل"></nav>
+
+<div id="sheet" class="sheet" hidden></div>
+<div id="toast" class="toast" hidden></div>
+
+<script src="words1.js"></script>
+<script src="words2.js"></script>
+<script src="words3.js"></script>
+<script src="words4.js"></script>
+<script src="words5.js"></script>
+<script src="stories.js"></script>
+<script src="db.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
